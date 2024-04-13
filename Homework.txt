@@ -1,0 +1,52 @@
+package ui;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class homework1 {
+
+	public static void main(String[] args)throws InterruptedException {
+		
+		WebDriverManager.firefoxdriver().setup();
+		FirefoxDriver fr = new FirefoxDriver(); 
+		
+		// IT 1
+		
+/*
+		fr.get("https:999.md");
+		fr.manage().window().maximize();
+		Thread.sleep(2000);
+		fr.findElement(By.className("header_bar_nav")).click();
+		
+*/
+		
+		//IT 3
+		/*	
+		
+		fr.get("https:999.md");
+		fr.manage().window().maximize();
+		Thread.sleep(2000);
+		fr.findElement(By.name("query")).click();
+		fr.findElement(By.name("query")).sendKeys("iphone 14 pro max");
+		
+		*/
+		
+		// IT 3
+		
+		/*
+		fr.get("https://www.geeksforgeeks.org/cpp-interview-questions/?ref=shm");
+		fr.manage().window().maximize();
+		fr.findElement(By.linkText("polymorphism")).click();
+		fr.navigate().back();
+		Thread.sleep(2000);
+		fr.findElement(By.linkText("inheritance")).click();
+		fr.navigate().back();
+		Thread.sleep(2000);
+		fr.findElement(By.linkText("abstraction")).click();
+		fr.navigate().back();
+		*/
+	}
+
+}
