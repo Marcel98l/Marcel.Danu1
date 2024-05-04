@@ -1,0 +1,120 @@
+package ui;
+
+
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework4 {
+
+	public static void main(String[] args) throws InterruptedException  {
+		
+		//  Get
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver fr = new ChromeDriver();
+		
+		
+		//  manage
+		fr.get("https://automationpanda.com");
+		fr.manage().window().maximize();
+		Thread.sleep(2000);
+		// find element + click 
+		fr.findElement(By.xpath("//*[@id=\"menu-item-9\"]")).click();
+		Thread.sleep(1000);
+		// send keys
+		fr.findElement(By.cssSelector("input[placeholder='Email Address'")).sendKeys("d_marcel@mail.ru");
+		Thread.sleep(1000);
+		// clear
+		fr.findElement(By.cssSelector("input[placeholder='Email Address'")).clear();
+		//getAttribuite
+		System.out.println(fr.findElement(By.xpath("//*[@id=\"subscribe-field\"]")).getAttribute("placeholder"));
+		// getCssValue
+		System.out.println(fr.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/aside[2]/a[1]")).getCssValue("font-size"));
+		// getLocation
+		 System.out.println(fr.findElement(By.xpath("/html/body/div[1]/header/div/nav/div/ul/li[5]/a")).getLocation());
+		// getSize
+		 System.out.println(fr.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/aside[1]/div/form/p[3]/button")).getSize());
+		//getTagName
+		 System.out.println(fr.findElement(By.xpath("//*[@id=\"menu-item-8\"]")).getTagName());
+		 //getText
+		 System.out.println(fr.findElement(By.xpath("/html/body/div[1]/header/a/h1")).getText());
+		 // isDisplayed
+		 System.out.println(fr.findElement(By.xpath("/html/body/div[1]/header/a/h1")).isDisplayed());
+		 //isEnabled
+		 System.out.println(fr.findElement(By.xpath("/html/body/div[1]/header/a/h1")).isEnabled());
+		 
+		 
+		//scrolling
+		 
+		 Thread.sleep(2000);
+			
+		 WebElement imagineSection = fr.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/article/div/h3[7]"));
+			Actions scrollAction = new Actions(fr);
+			scrollAction.moveToElement(imagineSection);
+			scrollAction.perform();
+		 
+			//hover over the mouse
+		Thread.sleep(2000);
+		
+		WebElement Twitter= fr.findElement(By.xpath("//*[@id=\"post-2\"]/div/p[2]/strong/a"));
+		Actions hoverActions = new Actions(fr);
+		hoverActions.moveToElement(Twitter).perform();
+		
+		
+		
+		//Click Dreapta
+		Thread.sleep(2000);
+		WebElement clickdreapta= fr.findElement(By.xpath("//*[@id=\"post-2\"]/div/p[5]/a"));
+		Actions actions = new Actions(fr);
+		actions.contextClick(clickdreapta).perform();
+		Thread.sleep(2000);
+		fr.findElement(By.xpath("//*[@id=\"post-2\"]/div/h3[6]")).click(); // sa dispara click dreapta ca ramine 
+		
+		 
+		 
+		//  getCurrentUrl
+		String currentUrl = fr.getCurrentUrl();
+		System.out.println("Adresa curenta este: " + currentUrl);
+		
+		//  getTitle
+		String currentTitle = fr.getTitle();
+		System.out.println(currentTitle);
+		
+		//  getPageSource
+		String pageSource = fr.getPageSource();
+		System.out.println("Codul sursa: " + pageSource);
+		
+		//  navigate
+		String firstPageTitle = fr.getTitle();
+		fr.navigate().to("https://moonglow.md");
+		System.out.println("Primul website: " + firstPageTitle);
+		Thread.sleep(2000);
+		String secondPageTitle = fr.getTitle();
+		fr.navigate().to("https://automationpanda.com");
+		System.out.println("al doilea website: " + secondPageTitle);
+		
+		//  switch to 
+		fr.get("https://automationpanda.com");
+		fr.manage().window().maximize();
+		Thread.sleep(2000);
+		fr.switchTo().newWindow(WindowType.TAB);
+		fr.get("https://google.com");
+		//  close 
+		fr.close();
+		Thread.sleep(1000);
+		//  quit
+		fr.quit();		
+		
+		
+
+		
+		
+
+	}
+
+}
