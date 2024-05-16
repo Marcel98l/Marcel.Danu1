@@ -1,0 +1,205 @@
+package ui;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Date;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
+import com.google.common.io.Files;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Homework6 {
+	
+	ChromeDriver fr = new ChromeDriver();
+	  
+	@BeforeTest (description=" Navigare catre site") 
+	public void main() throws  IOException, InterruptedException  {
+		
+    
+        fr.get("https://www.apple.com/");
+        fr.manage().window().maximize();
+        fr.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        Thread.sleep(2000);
+        takeScreenshot(fr, "a.PaginaPrincipala");
+        
+        String expectedTitle = "Apple";
+	    String actualTitle= fr.getTitle();
+	    Assert.assertEquals(expectedTitle, actualTitle, "Denumirea difera");
+        
+        
+	}
+        
+       
+		@Test (priority=1, description="1 Navigam spre Tab cu categoria iphone")
+	public void Navig() throws  IOException, InterruptedException{
+		
+		
+		WebElement Electronics= fr.findElement(By.xpath("//*[@id=\"globalnav-list\"]/li[2]/div/div/div[4]/ul/li[1]/a"));
+		Actions hoverActions = new Actions(fr);
+		hoverActions.moveToElement(Electronics).perform();
+		Thread.sleep(3000);
+		takeScreenshot(fr, "b.Navigare spre Tab cu categorii iphone");
+		}
+		
+		@Test (priority=2, description="2 Dam click pe iphone 15 pro ")
+		public void Clickcheck() throws  IOException, InterruptedException{
+		Thread.sleep(3000);
+		takeScreenshot(fr, "c.Click pe iphone 15 pro");
+	    fr.findElement(By.xpath("//*[@id=\"globalnav-submenu-link-iphone\"]/div/div/div[1]/ul/li[2]/a")).click();
+	
+		}
+		
+		@Test (priority=3, description="3 Localizare butonul buy ")
+		public void Local() throws  IOException, InterruptedException{
+	    Thread.sleep(3000);
+	    takeScreenshot(fr, "d.Click pe Buy");
+		fr.findElement(By.xpath("//*[@id=\"main\"]/section[1]/div/div[2]/a")).click();
+		}
+		
+		@Test (priority=4, description="5 Dam click pe iphone 15 pro max")
+		public void Iphone() throws  IOException, InterruptedException{ 
+		Thread.sleep(3000);
+		fr.findElement(By.xpath("//*[@id=\":r7:\"]")).click();
+		takeScreenshot(fr, "e.Click pe Iphone 15 pro max ");
+	
+		}
+		@Test (priority=5, description="6 Alegem culoarea albastra")
+		public void Colour() throws  IOException, InterruptedException{
+		Thread.sleep(3000);
+		fr.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div[2]/div[2]/div/div[2]/fieldset/ul/li[2]/label/img")).click();
+		takeScreenshot(fr, "f.Alegem Culoarea albastra");
+		}
+		
+		@Test (priority=6, description="7 Scrolldown ")
+		public void Scroll() throws  IOException, InterruptedException{
+		Thread.sleep(3000);
+		WebElement imagineSection = fr.findElement(By.xpath("//*[@id=\"noTradeIn_label\"]"));
+		Actions scrollAction = new Actions(fr);
+		scrollAction.moveToElement(imagineSection);
+		scrollAction.perform();
+		takeScreenshot(fr, "g.Scroll Down");
+		
+		}
+		
+		@Test (priority=7, description="8. Alegem Capacitatea de 1TB ")
+		public void Capacity() throws  IOException, InterruptedException{
+         fr.findElement(By.xpath("//*[@id=\":rg:\"]")).click();
+         Thread.sleep(3000);
+         takeScreenshot(fr, "h.Alegem Capacitatea");
+		}
+		
+		
+		@Test (priority=8, description="9. No trade in  ")
+		public void Notrade() throws  IOException, InterruptedException{
+         
+         fr.findElement(By.xpath("//*[@id=\"noTradeIn_label\"]")).click();
+         Thread.sleep(3000);
+         takeScreenshot(fr, "i.Alegem No trade in");
+         
+		}
+		
+		@Test (priority=9, description="9 scrolldown Payment ")
+		public void BtnScroll() throws  IOException, InterruptedException{
+         // scrolldown Payment 
+		Actions scrollAction = new Actions(fr);
+     	WebElement imagineSection2 = fr.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div[3]/div[4]/div/h2"));
+		
+		scrollAction.moveToElement(imagineSection2);
+		scrollAction.perform();
+		}
+		
+		@Test (priority=10, description="10. Selectam Buy  ")
+		public void Buy() throws  IOException, InterruptedException{
+		//10. Selectam Buy 
+		Thread.sleep(2000);
+		fr.findElement(By.xpath("//*[@id=\":r2f:_label\"]")).click();
+	     Thread.sleep(3000);
+	     takeScreenshot(fr, "j.Alegem Buy");
+	     
+		}
+		
+		
+		@Test (priority=11, description="11. Selectam connect to any carrier later ")
+		public void Carrier() throws  IOException, InterruptedException{
+	   //11. Selectam "connect to any carrier later"
+	     fr.findElement(By.xpath("//*[@id=\":rl:_label\"]/span[1]")).click();
+	     Thread.sleep(3000);
+	     takeScreenshot(fr, "k.Connect to any carrier later");
+		}
+		
+		@Test (priority=12, description="12 scrolldown need a moment?+ select connect to any carrier later")
+		public void ScrlSelect() throws  IOException, InterruptedException{
+	     //scrolldown "needa moment?"
+		Actions scrollAction = new Actions(fr);
+	     WebElement imagineSection3 = fr.findElement(By.xpath("//*[@id=\":rn:_MU6J3LL/A\"]/div/div/div/span/span"));
+			scrollAction.moveToElement(imagineSection3);
+			scrollAction.perform();
+			fr.findElement(By.xpath("//*[@id=\"applecareplus_59_noapplecare_label\"]")).click();
+			takeScreenshot(fr, "l.No Apple care+coverage");
+			 Thread.sleep(3000);
+		}
+		
+		@Test (priority=13, description="13. Adaugam in cos ")
+		public void Add() throws  IOException, InterruptedException{
+		 
+		fr.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div[3]/div[10]/div/div/div/div/div/div[3]/div/div/div/div[2]/div/div/span/form/div/span/button")).click();
+		 Thread.sleep(4000);
+		takeScreenshot(fr, "m.Adaugam in cos");
+		
+		}
+		
+		@AfterTest
+		public void exit() throws  IOException, InterruptedException{
+		fr.quit();
+		}
+         
+	
+		
+
+		
+		
+		
+		
+		
+	
+	
+	//Functia de apelarea a screenshot pentru fiecare button apasat
+		 public static void takeScreenshot(WebDriver driver, String stepName) {
+		        try {
+		            // Convert WebDriver object to TakeScreenshot
+		            TakesScreenshot screenshot = (TakesScreenshot) driver;
+
+		            // Capture screenshot as File
+		            File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
+
+		            // Define the destination file path
+		            String destinationPath = "screenshots/" + stepName + ".png";
+
+		            // Copy the file to the destination
+		            FileUtils.copyFile(srcFile, new File(destinationPath));
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+		    }
+		
+	}
+
+
