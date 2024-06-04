@@ -1,0 +1,147 @@
+1.Implicit waits reprezinta metoda prin care ofera posibilitatea sa seteze o pauza pentru ca sa se incarce toate elementele dintr un website pentru ulterior a fi gasite si utilizate in testare automata( pentru metoda data se  folosete
+pentru tot web elemente dintr un script prin care se seteaza un timp oarecare si nu este specificata o conditie asteptata
+In cazul la Explicit waits are ca regula aceeasi functie insa ea este utilizata anume la un element specific care se seteaza pentru a astepta raspunsul si ca scriptul sa functioneze la fel poate fi specificat si o conditie dupa care se 
+executa
+
+2. Pentru a selecta o optine dintr-un element de tip drop-down poate fi executat prin mai multe metode cel mai primitiv poate fi prin metoda .Click() , prin sendkeys ce permite utilizarea butoanelor de la tastatura si deja pe elementul 
+din drop down care ai nevoie inca o metoda care poate fi utilizata pentru drop down este prin interactiunea unui webelement unde ii selectam drop down si prin metoda de select. indicam optiunea care dorim
+
+3.Pentru verificarea sau selectarea unui check box este creata prin metoda .click() unde noi ii aratam pozitia sau deja elementu casetei care poate fi gasita prin xpath sau cssSelector ce putem bifa sau debifa pentru verificarea acestei
+poate fi utilizat printr un if else in care daca conditia ca checkboxu este gol sau selectat in caz contrat un mesaj de eroare sau de informare ca nu a fost debifat 
+
+4.Scrollingu reprezinta metoda prin care se poate realiza scrolldown jos sau sus la necesitate intr o pagina web si este utilizata prin metoda Action, ii se adreseaza un webelement adica o pozitie in pagina pina la care aceasta 
+functie.moveToElement(webelementu nostru) si deja action.perform() rolul acestei metode este de a observa daca a fost realizat schimbarile si ca Automation QA sa observe ca a fost facut schimbari pe pagina de xemplu un check box sau 
+drop down caci daca se afla mai jos aceste elemente ele le executa insa nu sunt vazute
+
+5.Cucumber reprezinta o metoda simplificata de realizarea unui test case care permite a fi integrat in testare automata caci este direct bazat pe o problema sau o functionalitate ce necesita testata, in acelasi timp ofera posibilitatea
+de economisirea timpului pentru realizare, o metoda foarte comoda si pe intelese care poate realiza cit QA automation cit si cel Manual caci poate cuprinde mai multi pasi pentru efectuarea testului si ii este cu mult mai simplu sa 
+realzieze pasii concreti pentru proiectul dat 
+
+6.Prompt alert poate fi trata prin metoda switchto() caci ea reprezinta o fereastra aparte intr un web ce nu este legata de cea principala in acest caz ea poate fi tratat prin mai mule modalitati ca intr un singur click pe Close sau 
+daca este nevoie de a introduce un text se utilizeaza functia switch  + alert si functia getText= ce ne permite sa introducem un oarecare text si deja si metoda accept() ca sa dispara si sa treaca inapoi spre pagina principala cu care 
+lucram 
+
+7.Pentru a face un screenshot intr un proiect este utilizata metoda TakesScreenshot unde noi ii indicam in ce mapa este nevoie sa se salveze toate imaginile pe care le cream si de asemeena in ce format jpg png etc. , pentru buna functionare
+cel mai util este de realizare a unei functii ce indeplineste metode de screenshot, importanta acestei metode este pentru o observa progresul daca totul este realizat sau functiile setate de QA is realizate cu imagini concrete pentru raport
+, ori in momente cind ceva ii apare o eroare printr un simplu if else sa realzieze un screeenshto sa observe unde a fost eroare si poate rapid sa treaca direct la problema ca sa fie fixata fara a pierde timpul in cautare la ce moment 
+a paginii a fost greseala 
+
+8.Testarea in diferite browser este importanta deoarece clientu are o preferinta speciala pentru un anumit browser in care el poate utiliza acest product soft astfel este important ca in urma testarii sa fie incluse toate tipurile de 
+browser ca sa fim siguri ca produsul este compatibil si indeplineste toate functiile cerute de catre client, in testarea automata aceste poate fi accesate prin crearea unei clase sau functii prin webdriver unde la fiecare test creat
+apelam la acea functie si se realizeaza acelasi cod pe diferite browseruri caci cele nu necesita sa fie hardcodate.
+
+9.In cazurile cind un xpath sau CSS selector este instabil sau se schimba frecvent in primul rind ar trebuie sa ne atasam de ID caci ele reprezinta elemente unice care nu poate fi schimbate si ii este sepcific doar lui, deseori exista momente
+care ne creeaza dificultati in gasirea unor web elemente dea aceea este bine venit de utilizat ambele metode, css Selector permite o diferentiere si avem spatiu care sa putem alege prin mai multe metode prin diferite atribute si este cu  mult 
+mai inteles, combinarea acestor 2 metode(xpath,CSSselector) ne da loc pentru improvizare si testarea mai eficienta 
+
+10.Dintre cele mai utilizatea anotari in TestNG se enumere urmatoarele : 
+a) Priority ce ofera posibilitatea de prioritizat testele care se efectueaza pas dupa pas care ai nevoie sa fie primu si care utlimu 
+b) Descrierea ajuta pentru intelegerea la ce anume este utilizat acest cod, sau pentru mesaje de reaminitre in caz ca nu inteleg pentru ce este utilizat aceasta bucata de cod 
+c) BEfore&After test reprezinta anotatiile care se utilizeaza pentru ca inainde de tastarea principala sau efectuieze pasii de baza si apoi deja sa treaca la testarea principala care este nevoie in cazul la Before, la After pentru finalizarea
+testului si functionalitatii care deja nu intra in testul principal 
+d)Before&after method are aceeasi functionaltitate de realizare ca test insa ea este efectuata dupa ce a fost facut acel test (  BEfore&After)
+
+11.Asertiunile in TestNG sunt de mai multe tipuri dintre ele se enumera Hard Assertion care este utilizata pentru stoiparea testului in caz daca a fost depistat o greseala si inceteaza imediat testul cu rezultate sau mesaje de eroare,
+Soft Assertion este metoda prin care daca a fost depistat o eroare continua mai departe testarea pentru vedea rezultatul final, acest tip poate fi utilizat in cazul cind deja se stie ca este o eroare in pagina insa nu a fost fixata 
+dar ai nevoie de rezultatul final 
+
+12.Page Object model cunosctu ca POM reprezinta un sablon de proiectare care formeaza repozitoriu unde este pastrata toate elementele unui web ajuta ca sa nu fie dublare de cod sa, sa poata fi usor utilizata si inserate importurile prin 
+dependecy care ofera o gama larga de metode pentru Testarea Automata si economisirea de timp in cazul utilizarii pri Maven, principalele functionalitati la POM este ca codul poate fi reutilizat si economiseste mult timp si nu necesta sa fie 
+scris codul din nou 
+
+13.Pentru a depasi executarea unui Test prin utilizarea functiei TestNG este utilizata @Test enable=false astfel la selecatarea run all o aceast test o sa fie depasit 
+
+
+
+14.Metoda @dataprovide permite ca sa fie utilizata informatia dintr o alta clasa sau locatie fara a fi nevoita sa fie creata in acelasi cod ci doar la apelarea ei, ea este utilia pentru organizarea mai clara a codului si reducerea numarului
+ce permite ca codul creat sa fie mai clar si inteles pentru alte persoane, si ca informatia sa nu fie hardcodata si usor externalizata 
+
+15.
+
+DataClass   ( prima clasa)
+
+package ui;
+
+import org.testng.annotations.DataProvider;
+
+public class DataClass {
+
+	
+	@DataProvider(name="credentials")
+	public Object[][] providerDataSet() {
+		
+		return new Object[][] {
+			
+			{"standard_user", "secret_sauce"},
+		
+		};
+	}
+}
+
+
+OpenWebClass ( clasa ce deschide site-ul)
+
+package ui;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class OpenWebClass   {
+
+	public static WebDriver fr=null;
+
+	@BeforeSuite
+	public void launchBrowser () {
+		
+		WebDriverManager.chromedriver().setup();
+		fr= new ChromeDriver();
+		fr.manage().window().maximize();
+
+	}
+	@AfterSuite
+	public void closeBrowser() {
+	//	fr.close();
+		
+	}
+	
+	
+}
+
+BazaClass ( clasa de baza unde are loc logarea)
+
+package ui;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+
+public class BazaClass extends OpenWebClass  {
+	
+	
+	@Test (dataProvider="credentials",dataProviderClass = DataClass.class)
+	public void launchAplication(String username, String password) {
+		fr.get("https://www.saucedemo.com/");
+		
+		fr.findElement(By.id("user-name")).sendKeys(username);
+		fr.findElement(By.id("password")).sendKeys(password);
+		fr.findElement(By.id("login-button")).click();
+	
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
