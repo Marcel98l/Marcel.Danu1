@@ -1,0 +1,12 @@
+Feature: User can add an command in OLX.ro
+
+  Scenario: User add a new command 
+    Given the user is on the OLX.ro homepage
+    When the user logs in with valid credentials
+    And the user navigates to the search bar 
+    And the user fills with "Minge de fotball" 
+    And the user click on random product 
+    And the user click on button "cumpara cu livrare " 
+    And the user user fills requirement information
+    And the user click on "plaseaza comanda"
+    Then the command is successfully selected
